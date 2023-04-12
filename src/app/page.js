@@ -9,9 +9,11 @@ export default function Home() {
       <HomeHeader />
       <main className="flex flex-col items-center mt-24">
         <Image
-          width="300"
-          height="100"
           src={'/logo.png'}
+          width="0"
+          height="0"
+          sizes="100vw"
+          className="h-auto w-72"
           alt="logo"
         />
         <HomeSearch />

@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import './globals.css';
 import { Karla } from 'next/font/google';
 
@@ -14,7 +15,10 @@ const karla = Karla({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={karla.className}>{children}</body>
+      <body className={karla.className}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
