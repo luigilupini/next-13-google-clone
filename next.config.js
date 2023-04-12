@@ -4,8 +4,10 @@ const nextConfig = {
     appDir: true,
     images: {
       allowFutureImage: true,
-      domains: ['www.google.com'],
     },
+  },
+  images: {
+    domains: ['www.google.com', 'i.gifer.com', 'ipgeolocation.io'],
   },
 };
 

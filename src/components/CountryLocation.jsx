@@ -1,5 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
+
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 async function getCountryData() {
@@ -31,9 +32,12 @@ export default function CountryLocation() {
   return (
     <div className="flex items-center gap-2">
       {country}
-      <img
+      <Image
         src={flag}
         className="object-cover w-4 h-4 border-2 border-gray-100 rounded-full opacity-75"
+        width={16}
+        height={16}
+        priority="true"
         alt="logo"
       />
     </div>

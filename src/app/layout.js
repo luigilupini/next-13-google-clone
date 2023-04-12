@@ -15,7 +15,7 @@ const karla = Karla({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={karla.className}>
+      <body className={`${karla.className} relative min-h-screen`}>
         {children}
         <Footer />
       </body>
