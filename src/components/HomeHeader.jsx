@@ -9,7 +9,7 @@ export default function HomeHeader() {
       <div className="flex items-center justify-end gap-4">
         <Link href={'https://mail.google.com'}>Gmail</Link>
         <Link href={'https://images.google.com'}>Images</Link>
-        <TbGridDots className="p-2 text-4xl bg-transparent rounded-full hover:bg-gray-200" />
+        <TbGridDots className="header-icon" />
         <button className="px-4 py-2 font-medium text-white transition-all duration-300 bg-blue-500 rounded-md shadow-sm hover:brightness-105">
           Sign in
         </button>

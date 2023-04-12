@@ -13,4 +13,13 @@ a {
   .link {
     @apply text-gray-500 hover:underline cursor-pointer text-sm;
   }
+  .header-icon {
+    @apply bg-transparent hover:bg-gray-100 rounded-full p-2 text-4xl cursor-pointer;
+  }
+  .option-link {
+    @apply pl-2 text-3xl mr-3 text-blue-500 sm:mr-2 cursor-pointer;
+  }
+  .option-icon {
+    @apply flex items-center justify-center gap-1 px-2 pb-3 border-b-4 border-transparent cursor-pointer active:text-blue-500;
+  }
 }

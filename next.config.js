@@ -4,6 +4,7 @@ const nextConfig = {
     appDir: true,
     images: {
       allowFutureImage: true,
+      domains: ['www.google.com'],
     },
   },
 };

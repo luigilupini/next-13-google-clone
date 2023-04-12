@@ -14,6 +14,7 @@ export default function Home() {
           height="0"
           sizes="100vw"
           className="h-auto w-72"
+          priority="true"
           alt="logo"
         />
         <HomeSearch />
