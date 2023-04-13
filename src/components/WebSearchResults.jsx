@@ -1,21 +1,17 @@
-'use client';
-
 import Link from 'next/link';
 import React from 'react';
 
 import parse from 'html-react-parser';
+import SearchInformation from './SearchInformation';
 
 export default function WebSearchResults({ results }) {
   const { items, searchInformation } = results;
   // console.log(items);
   return (
-    <div className="w-full pb-20 mx-auto sm:pl-[5%] md:pl-[10%]">
-      <p className="pb-3 text-sm text-gray-500">
-        About {searchInformation?.formattedTotalResults} results (
-        {searchInformation?.formattedSearchTime} seconds)
-      </p>
+    <main className="w-full pb-20 mx-auto sm:px-[5%] md:px-[10%]">
+      <SearchInformation searchInformation={searchInformation} />
       {items.map((result) => (
-        <div className="max-w-2xl mt-4 mb-8" key={result.link}>
+        <article className="max-w-2xl mt-4 mb-8" key={result.link}>
           <div className="flex flex-col gap-[2px] group">
             <Link
               href={result.link}
@@ -33,8 +29,8 @@ export default function WebSearchResults({ results }) {
               {parse(result.htmlSnippet)}
             </p>
           </div>
-        </div>
+        </article>
       ))}
-    </div>
+    </main>
   );
 }

@@ -25,7 +25,7 @@ export default function SearchBox() {
 
   return (
     <form
-      className="flex items-center justify-center flex-grow max-w-3xl px-6 py-3 ml-10 mr-5 border border-gray-200 rounded-full shadow-lg"
+      className="flex items-center justify-center flex-grow max-w-3xl px-6 py-3 ml-10 mr-5 transition-shadow duration-300 border border-gray-200 rounded-full shadow-sm hover:shadow-md focus-within:shadow-md"
       onSubmit={handleSubmit}
     >
       <input
