@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import SearchInformation from './SearchInformation';
+import PaginationButtons from './PaginationButtons';
 
 const example = {
   kind: 'customsearch#result',
@@ -31,34 +32,35 @@ const example = {
 
 export default function ImageSearchResults({ results }) {
   const { items, searchInformation } = results;
-  // console.log(items);
   return (
     <main className="w-full pb-20 mx-auto sm:px-[5%] md:px-[10%]">
       <SearchInformation searchInformation={searchInformation} />
       <section className="grid items-center justify-between mt-4 mb-8 overflow-hidden gap-x-[2vw] gap-y-[1vw] md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-        {items.map((result) => (
-          <article key={result.link} className="group min-w-[200px]">
-            <Link href={result.image.contextLink}>
+        {items.map(({ link, image, title, displayLink }) => (
+          <article key={link} className="group min-w-[200px]">
+            <Link href={image.contextLink}>
               <img
-                src={result.link}
-                alt={result.title}
+                src={link}
+                alt={title}
                 className="object-cover w-full rounded-sm h-52"
               />
             </Link>
-            <Link href={result.image.contextLink}>
+            <Link href={image.contextLink}>
               <h2 className="mt-1 text-base font-medium text-blue-800 truncate group-hover:underline decoration-blue-800">
-                {result.title}
+                {title}
               </h2>
             </Link>
             <Link
-              href={result.image.contextLink}
+              href={image.contextLink}
               className="p-0 text-sm text-gray-600"
             >
-              {result.displayLink}
+              {displayLink}
             </Link>
           </article>
         ))}
       </section>
+      {/* We add pagination and adjust the URL to reflect the current page. */}
+      <PaginationButtons />
     </main>
   );
 }

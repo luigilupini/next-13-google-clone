@@ -15,7 +15,6 @@ export default function HomeSearch() {
     // If you need interactivity consider converting to a Client Component.
     e.preventDefault();
     if (!input.trim()) return; // exit logic if input is empty
-    console.log(input);
     router.push(`/search/web?searchTerm=${input}`);
   };
   const randomSearch = async () => {
