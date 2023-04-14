@@ -1,16 +1,18 @@
+// 'force-dynamic': Force dynamic rendering and dynamic data fetching of a
+// layout or page by disabling all caching of fetch requests and always
+// revalidating. > https://github.com/vercel/next.js/issues/43191
+export const dynamic = 'force-dynamic';
+
 import React from 'react';
 import WebSearchResults from '@/components/WebSearchResults';
 
 async function getData(query, index) {
-  // 👇🏻 This is a hack to simulate a slow API response.
-  // await new Promise((resolve) => setTimeout(resolve, 2000)); // 2 seconds
+  // 👇🏻 This is a hack to simulate/test slow API response for React Suspense.
+  // await new Promise((resolve) => setTimeout(resolve, 2000)); // 1 seconds
   // console.log({ query, index });
   const url = 'https://www.googleapis.com/customsearch';
   const response = await fetch(
-    `${url}/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${query.searchTerm}&start=${index}`,
-    {
-      next: { revalidate: 86400 }, // 1 day
-    }
+    `${url}/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${query.searchTerm}&start=${index}`
   );
   if (!response.ok) throw new Error('Oops! something went wrong.');
   const data = await response.json();
