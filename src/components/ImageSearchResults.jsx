@@ -33,7 +33,7 @@ const example = {
 export default function ImageSearchResults({ results }) {
   const { items, searchInformation } = results;
   return (
-    <main className="w-full pb-20 mx-auto sm:px-[5%] md:px-[10%]">
+    <main className="w-full pb-20 mx-auto">
       <SearchInformation searchInformation={searchInformation} />
       <section className="grid items-center justify-between mt-4 mb-8 overflow-hidden gap-x-[2vw] gap-y-[1vw] md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
         {items.map(({ link, image, title, displayLink }) => (

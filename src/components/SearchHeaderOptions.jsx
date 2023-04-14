@@ -20,7 +20,7 @@ export default function SearchHeaderOptions() {
     router.push(`/search/${tab}?searchTerm=${searchParams}`);
   };
   return (
-    <div className="flex gap-4 text-sm text-gray-700 border-b-2 select-none sm:pl-[5%] md:pl-[10%]">
+    <div className="flex gap-4 pl-2 text-sm text-gray-700 border-b-2 select-none md:px-[4%]">
       <div
         onClick={() => selectTab('web')}
         className={`option-icon ${

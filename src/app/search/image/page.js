@@ -4,7 +4,7 @@ import ImageSearchResults from '@/components/ImageSearchResults';
 
 async function getData(query, index) {
   // 👇🏻 This is a hack to simulate a slow API response.
-  await new Promise((resolve) => setTimeout(resolve, 3000)); // 3 seconds
+  // await new Promise((resolve) => setTimeout(resolve, 2000)); // 2 seconds
   // console.log({ query, index });
   const response = await fetch(
     `https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${query.searchTerm}&searchType=image&start=${index}`,
@@ -34,7 +34,7 @@ export default async function ImageSearchPage({ searchParams }) {
     );
   }
   return (
-    <main className="p-6 text-gray-700">
+    <main className="text-gray-700 wrapper">
       {results && <ImageSearchResults results={results} />}
     </main>
   );

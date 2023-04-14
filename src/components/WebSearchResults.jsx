@@ -8,7 +8,7 @@ import PaginationButtons from './PaginationButtons';
 export default function WebSearchResults({ results }) {
   const { items, searchInformation } = results;
   return (
-    <main className="w-full pb-20 mx-auto sm:px-[5%] md:px-[10%]">
+    <main className="w-full pb-20 mx-auto">
       <SearchInformation searchInformation={searchInformation} />
       {items.map(({ link, formattedUrl, title, htmlSnippet }) => (
         <article className="max-w-2xl mt-4 mb-8" key={link}>
