@@ -3,7 +3,7 @@ import WebSearchResults from '@/components/WebSearchResults';
 
 async function getData(query, index) {
   // 👇🏻 This is a hack to simulate a slow API response.
-  await new Promise((resolve) => setTimeout(resolve, 3000)); // 3 seconds
+  // await new Promise((resolve) => setTimeout(resolve, 2000)); // 2 seconds
   // console.log({ query, index });
   const url = 'https://www.googleapis.com/customsearch';
   const response = await fetch(
